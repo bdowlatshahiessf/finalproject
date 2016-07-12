@@ -31,35 +31,48 @@ angular.module('starter', ['ionic'])
   .state('landing', {
     url: '/',
     templateUrl: 'templates/landing.html',
+    //controller: 'landingCtrl',
   })
   
   .state('addShipment', {
     url: '/addShipment',
     templateUrl: 'templates/addShipment.html',
+    // controller: 'addShipmentCtrl',
   })
   
   .state('pastShipment', {
     url: '/pastShipment',
     templateUrl: 'templates/pastShipment.html',
+    // controller: 'pastShipmentCtrl',
   })
   
   .state('register', {
     url: '/register',
     templateUrl: 'templates/register.html',
+    // controller: 'registerCtrl',
   })
   
   .state('shipmentCon', {
     url: '/shipmentCon',
     templateUrl: 'templates/shipmentCon.html',
+    // controller: 'templatesCtrl',
   })
   
   .state('viewshipment', {
     url: '/viewshipment',
     templateUrl: 'templates/viewshipment.html',
+    // controller: 'viewshipmentCtrl',
+  })
+  
+  .state('eachShipment', {
+    url: '/eachShipment',
+    templateUrl: 'templates/eachShipment.html',
+    // controller: 'eachShipment',
   })
   
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
+    // controller: 'loginCtrl',
   });
 });
