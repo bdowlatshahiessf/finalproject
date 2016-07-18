@@ -1,11 +1,19 @@
   <ion-view view-title="Shipment Info">
     <ion-content class="padding">
-      <h1>Shipment #</h1>
+      <h1>{{Shipment}} #</h1>
       
-      
-      
-      
-      
+     <h3> {{shipmentname}}</h3>
+     <h3> {{photohere}}</h3>
+     <div  ng-controller="camController">1  <img ng-src="{{imgURI}}"></div>
+      <div  ng-controller="camController2"> 2  <img ng-src="{{imgURI2}}"></div>
+      <div ng-controller="camController3">3  <img ng-src="{{imgURI3}}"></div>
+     
+     
+     
+     
+     
+     <h3> {{shipmentissues}}</h3>
+     <h3> {{workername}}</h3>
       
     <button class="button button-full button-outline button-energized" ui-sref="viewshipment" > Back to List</Button>
       

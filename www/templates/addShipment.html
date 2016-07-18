@@ -1,29 +1,76 @@
 <ion-view view-title="Add Shipment">
-    <ion-content class="padding">
-    <form>
+    <ion-content class="padding" >
+        
+        
+
+        
+        
+        
+    <form  name="addShipForm" ng-submit="addForm(addShipForm)" novalidate>
     
-    <label class="item item-input"><input type="text" placeholder="From Who" required></input> </label>
-    <div class="card" align="center">
-    <div class="item item-text-wrap">
-    <h4>Upload Product and Invoice Images Here</h4>
+       
+   <!--takes the shipment name-->
+   
+    <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.shipmentName.$invalid && addShipForm.$submitted}"><input name-"shipmentName" id="shipmentName" type="text" placeholder="From Who"  ng-model="user.shipmentName" required> </label>
+
+
+
+
+<!--takes pictures-->
+
+
+  <!--<label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img1.$invalid && addShipForm.$submitted}">-->
+  <!--<div ng-controller="camController">-->
+      
+  <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">-->
+  <!--<img ng-show="imgURI === undefined" ng-src="http://placehold.it/100x100">-->
     
-    <div align="center"><label class="item item-input"> <input type="file" name="pic"accept="image/*" multiple></input></label></div>
-    </div>
-    </div>
+  <!--  <img ng-src="{{imgURI || 'img/dummy.jpg'}}" id="imgURI" width="100 " style="display: block; margin: 0 auto;"/>-->
+    
+    
+  <!--  <button class="button button-full button-outline button-energized" ng-click="takePicture()">Take Photo of Shipment</button>-->
+  <!--  </div>-->
+  <!--  </label>-->
+    
    
     
+  <!--   <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img2.$invalid && addShipForm.$submitted}">-->
+  <!--<div ng-controller="camController2">-->
+  <!-- <img ng-show="imgURI2 !== undefined" ng-src="{{imgURI2}}">-->
+  <!--  <img ng-show="imgURI2 === undefined" ng-src="http://placehold.it/100x100">-->
+  <!--  <button class="button button-full button-outline button-energized" ng-click="takePicture2()">Take Photo of Shipment</button>-->
+  <!--  </div>-->
+  <!--  </label>-->
+
+    
+  <!--   <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img3.$invalid && addShipForm.$submitted}">-->
+  <!--  <div ng-controller="camController3">-->
+  <!--   <img ng-show="imgURI3 !== undefined" ng-src="{{imgURI3}}">-->
+  <!--  <img ng-show="imgURI3 === undefined" ng-src="http://placehold.it/100x100">-->
+  <!--  <button class="button button-full button-outline button-energized" ng-click="takePicture3()">Take Photo of Invoice</button>-->
+  <!--</div>-->
+  <!--</label>-->
+    
+  <!--  </div>-->
    
-    
-      <label class="item item-input">  <input type="text" placeholder="Issues With Shipment" required></input> </label>
+  <!--  </div>-->
+  <!--  </div>-->
+ 
+ <!--or-->
+ <!--Add a URL-->
+ 
+  <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img1url.$invalid && addShipForm.$submitted}"><input name="img1url" id="img1url" type="text" placeholder="img1url"  ng-model="user.img1url" > </label>
+
+   
+ <!--shipment images are put here-->
+      <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.issues.$invalid && addShipForm.$submitted}">  <input name="issues" id="issues" type="text" placeholder="Issues With Shipment" ng-model="user.issues" required> </label>
      
+     <!--person who put in info puts therename here-->
      
-        
-       <label class="item item-input"> <input type="text" placeholder="Employee Name" required></input></label>
+       <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.workerName.$invalid && addShipForm.$submitted}"> <input name="workerName" id="workerName" type="text" placeholder="Employee Name" ng-model="user.workerName" required></label>
     
-    
-    
-    <button class="button button-full button-outline button-energized" ui-sref="shipmentCon" >
-        
+    <button class="button button-full button-outline button-energized" type="submit">
+       
       Add This Shipment
       </button>
       </form>

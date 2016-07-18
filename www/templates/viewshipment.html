@@ -1,14 +1,20 @@
  
-  
   <ion-view view-title="Shipment Info List">
     <ion-content class="padding">
-      <button class="button button-full button-balanced"  ui-sref="eachShipment"><h1>Shipment # one for each inputed</h1></button>
+    
+  
+  <ion-list>
+    <!--<ion-item "item item-dark" ng-repeat="shipment in shipment" ng-click="goToResult(newShipData)">-->
+    <button class="button button-full button-outline button-energized" nr-repeat="shipment in shipments"  ui-sref="eachShipment"><h1>{{Shipment}}</h1></button></ion-list>
 
       
       
-   
-      
-      
-      
+       </ion-item>
     </ion-content>
 </ion-view>
+
+
+
+
+
+ 

@@ -3,7 +3,94 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservices'])
+
+ 
+  .controller("camController", function($scope, $cordovaCamera) {
+ 
+    $scope.takePicture = function() {
+        var options = { 
+            quality : 75, 
+            destinationType : Camera.DestinationType.DATA_URL, 
+            sourceType : Camera.PictureSourceType.CAMERA, 
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+ 
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+             $scope.imgURI2 = "data:image/jpeg;base64," + imageData;
+             $scope.imgURI3 = "data:image/jpeg;base64," + imageData;
+            
+        }, function(err) {
+           
+        });
+    }
+
+})
+
+ 
+
+  .controller("camController2", function($scope, $cordovaCamera) {
+ 
+    $scope.takePicture2 = function() {
+        var options = { 
+            quality : 75, 
+            destinationType : Camera.DestinationType.DATA_URL, 
+            sourceType : Camera.PictureSourceType.CAMERA, 
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+ 
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+          
+             $scope.imgURI2 = "data:image/jpeg;base64," + imageData;
+            
+            
+        }, function(err) {
+           
+        });
+    }
+
+})
+
+
+  .controller("camController3", function($scope, $cordovaCamera) {
+ 
+    $scope.takePicture3 = function() {
+        var options = { 
+            quality : 75, 
+            destinationType : Camera.DestinationType.DATA_URL, 
+            sourceType : Camera.PictureSourceType.CAMERA, 
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+ 
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+             $scope.imgURI3 = "data:image/jpeg;base64," + imageData;
+            
+        }, function(err) {
+           
+        });
+    }
+
+})
+
+
+
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,48 +118,58 @@ angular.module('starter', ['ionic'])
   .state('landing', {
     url: '/',
     templateUrl: 'templates/landing.html',
-    //controller: 'landingCtrl',
+      controller:'landingCtrl'
+
   })
   
   .state('addShipment', {
     url: '/addShipment',
     templateUrl: 'templates/addShipment.html',
-    // controller: 'addShipmentCtrl',
+     controller: 'addShipmentCtrl',
   })
   
   .state('pastShipment', {
     url: '/pastShipment',
     templateUrl: 'templates/pastShipment.html',
-    // controller: 'pastShipmentCtrl',
+   controller: 'pastShipmentCtrl',
   })
   
   .state('register', {
     url: '/register',
     templateUrl: 'templates/register.html',
-    // controller: 'registerCtrl',
+     controller: 'registerCtrl',
   })
   
   .state('shipmentCon', {
     url: '/shipmentCon',
     templateUrl: 'templates/shipmentCon.html',
-    // controller: 'templatesCtrl',
+     controller: 'shipmentConCtrl',
   })
   
   .state('viewshipment', {
     url: '/viewshipment',
     templateUrl: 'templates/viewshipment.html',
-    // controller: 'viewshipmentCtrl',
+     controller: 'viewshipmentCtrl',
   })
   
   .state('eachShipment', {
     url: '/eachShipment',
     templateUrl: 'templates/eachShipment.html',
-    // controller: 'eachShipment',
+     controller: 'eachShipmentCtrl',
   })
   
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
-    // controller: 'loginCtrl',
+     controller: 'loginCtrl',
   });
+  
+  
+  
+  
+  
+  
+  
+  
+  
 });
