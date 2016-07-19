@@ -18,7 +18,7 @@ function($scope, $state, shipmentREST, $window) {
  
  // talks to rest services
  
-  shipmentREST.post($scope.user).then(function(response) {
+  shipmentREST.post($scope.user, $window.localStorage.token).then(function(response) {
   if (response.status == 200) {
   $state.go("shipmentCon");
   console.log(response);

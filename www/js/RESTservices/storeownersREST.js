@@ -5,7 +5,10 @@
      return $http({
       url: "https://finalproject-bdowlatshahiessf.c9users.io/api/storeowners",
       method: 'POST',
-      data: newUserData
+      data: newUserData,
+      headers: {
+                  'Authorization': newUserData,
+              }
      });
     };
 
@@ -13,7 +16,8 @@ storeownersREST.login = function(data) {
      return $http({
       url: "https://finalproject-bdowlatshahiessf.c9users.io/api/storeowners/login",
       method: 'POST',
-      data: data
+      data: data,
+      
      });
     };
 

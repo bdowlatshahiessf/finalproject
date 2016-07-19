@@ -1,8 +1,13 @@
 <ion-view view-title="Add Shipment">
+    
+        <ion-nav-buttons side="right">
+        <button class="button button-outline button-energized" ui-sref="shipmentCon"> Back </button> </ion-nav-buttons>
+    
+    
     <ion-content class="padding" >
         
         
-
+ <br><br>
         
         
         
@@ -59,7 +64,7 @@
  <!--or-->
  <!--Add a URL-->
  
-  <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img1url.$invalid && addShipForm.$submitted}"><input name="img1url" id="img1url" type="text" placeholder="img1url"  ng-model="user.img1url" > </label>
+  <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.img1url.$invalid && addShipForm.$submitted}"><input name="img1url" id="img1url" type="text" placeholder="Place image source here."  ng-model="user.img1url" > </label>
 
    
  <!--shipment images are put here-->
@@ -68,7 +73,9 @@
      <!--person who put in info puts therename here-->
      
        <label class="item item-input" ng-class="{ 'has-errors' : addShipForm.workerName.$invalid && addShipForm.$submitted}"> <input name="workerName" id="workerName" type="text" placeholder="Employee Name" ng-model="user.workerName" required></label>
-    
+   
+   
+    <br><br> 
     <button class="button button-full button-outline button-energized" type="submit">
        
       Add This Shipment
