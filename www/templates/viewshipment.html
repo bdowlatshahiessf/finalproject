@@ -3,11 +3,16 @@
     <ion-content class="padding">
     
   
-  <ion-list>
+  <!--<ion-list>-->
     <!--<ion-item "item item-dark" ng-repeat="shipment in shipment" ng-click="goToResult(newShipData)">-->
-    <button class="button button-full button-outline button-energized" nr-repeat="shipment in shipments"  ui-sref="eachShipment"><h1>{{Shipment}}</h1></button></ion-list>
+    <!--<button class="button button-full button-outline button-energized" nr-repeat="shipment in shipments"  ui-sref="eachShipment"><h1>{{Shipment}}</h1></button></ion-list>-->
 
-      
+      <ion-item ng-repeat="stuff in shipments">
+        <h2>{{stuff.shipmentName}}</h2>
+        <h2>{{stuff.img1url}}</h2>
+        <h2>{{stuff.issues}}</h2>
+        <h2>{{stuff.workerName}}</h2>
+        
       
        </ion-item>
     </ion-content>

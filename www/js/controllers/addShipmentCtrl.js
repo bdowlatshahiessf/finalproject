@@ -1,5 +1,3 @@
-
-
 //should PUSH info to make a new shipment//
 
 
@@ -22,8 +20,6 @@ function($scope, $state, shipmentREST, $window) {
  
   shipmentREST.post($scope.user).then(function(response) {
   if (response.status == 200) {
-    $window.localStorage.token = response.data.token;
-    $window.localStorage.userID = response.data.id;
   $state.go("shipmentCon");
   console.log(response);
   

@@ -146,11 +146,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
      controller: 'shipmentConCtrl',
   })
   
-  .state('viewshipment', {
-    url: '/viewshipment',
-    templateUrl: 'templates/viewshipment.html',
-     controller: 'viewshipmentCtrl',
-  })
+ 
   
   .state('eachShipment', {
     url: '/eachShipment',
@@ -162,6 +158,33 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
     url: '/login',
     templateUrl: 'templates/login.html',
      controller: 'loginCtrl',
+     
+     
+  })
+  
+   .state('viewshipment', {
+    url: '/viewshipment',
+    templateUrl: 'templates/viewshipment.html',
+     controller: 'viewshipmentCtrl',
+       resolve: {
+      shipments: ['$window','$state','shipmentREST', function( $window, $state, shipmentREST) {
+        return shipmentREST.take($window.localStorage.userID, $window.localStorage.token)
+        .then(function(res){
+           console.log(res);
+           return res.data;
+       },  function(error){
+  if (error.status == 404) {
+   alert("server not found");
+  }
+           console.log(error);
+            return ("Please try again later");
+           
+       });
+      }]
+    }
+  
+  
+  
   });
   
   

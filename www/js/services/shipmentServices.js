@@ -1,5 +1,5 @@
 angular.module('shipmentServices',[])
-.service('shipmentServices',['$window',  function ($window ) {
+.service('shipmentServices',['$window','shipmentREST',  function ($window, shipmentREST ) {
     var service = this;
     var shipmentElements = {
         "shipment name": {},
@@ -11,6 +11,5 @@ angular.module('shipmentServices',[])
     var shipmentStack = [];
     
          service.getLists = function() {
-     return JSON.parse($window.localStorage.shipmentlist || "[]");
-       
+        return shipmentREST.take();
    }} ]);

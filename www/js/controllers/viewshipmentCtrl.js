@@ -1,14 +1,20 @@
 angular.module('starter.controllers')
-.controller('viewshipmentCtrl',['$scope', '$state',
-        function($scope, $state) {
+.controller('viewshipmentCtrl',['$scope', '$state','shipmentREST','shipments',
+        function($scope, $state, shipmentREST, shipments) {
+ $scope.shipments = shipments;
 
- $scope.Shipment="Shipment  # one for each inputed";
+ 
+
+    
+     
+    
+ 
+ 
 
 
 }]);
 
 //creates a list using GET filerting by store name//
-
 
 
 
