@@ -3,14 +3,14 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservices'])
+angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers','ngCordova','RESTservices'])
 
  
   .controller("camController", function($scope, $cordovaCamera) {
  
     $scope.takePicture = function() {
         var options = { 
-            quality : 75, 
+            quality : 20, 
             destinationType : Camera.DestinationType.DATA_URL, 
             sourceType : Camera.PictureSourceType.CAMERA, 
             allowEdit : true,
@@ -23,8 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
  
         $cordovaCamera.getPicture(options).then(function(imageData) {
             $scope.imgURI = "data:image/jpeg;base64," + imageData;
-             $scope.imgURI2 = "data:image/jpeg;base64," + imageData;
-             $scope.imgURI3 = "data:image/jpeg;base64," + imageData;
+            $scope.imgURI2 = "data:image/jpeg;base64," + imageData;
+            $scope.imgURI3 = "data:image/jpeg;base64," + imageData;
             
         }, function(err) {
            
@@ -35,58 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
 
  
 
-  .controller("camController2", function($scope, $cordovaCamera) {
  
-    $scope.takePicture2 = function() {
-        var options = { 
-            quality : 75, 
-            destinationType : Camera.DestinationType.DATA_URL, 
-            sourceType : Camera.PictureSourceType.CAMERA, 
-            allowEdit : true,
-            encodingType: Camera.EncodingType.JPEG,
-            targetWidth: 300,
-            targetHeight: 300,
-            popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
-        };
- 
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-          
-             $scope.imgURI2 = "data:image/jpeg;base64," + imageData;
-            
-            
-        }, function(err) {
-           
-        });
-    }
-
-})
-
-
-  .controller("camController3", function($scope, $cordovaCamera) {
- 
-    $scope.takePicture3 = function() {
-        var options = { 
-            quality : 75, 
-            destinationType : Camera.DestinationType.DATA_URL, 
-            sourceType : Camera.PictureSourceType.CAMERA, 
-            allowEdit : true,
-            encodingType: Camera.EncodingType.JPEG,
-            targetWidth: 300,
-            targetHeight: 300,
-            popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
-        };
- 
-        $cordovaCamera.getPicture(options).then(function(imageData) {
-             $scope.imgURI3 = "data:image/jpeg;base64," + imageData;
-            
-        }, function(err) {
-           
-        });
-    }
-
-})
 
 
 
@@ -138,6 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
     url: '/register',
     templateUrl: 'templates/register.html',
      controller: 'registerCtrl',
+     cashe: false,
   })
   
   .state('shipmentCon', {
@@ -158,6 +108,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova','RESTservi
     url: '/login',
     templateUrl: 'templates/login.html',
      controller: 'loginCtrl',
+     cashe: false,
      
      
   })

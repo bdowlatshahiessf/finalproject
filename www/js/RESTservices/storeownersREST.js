@@ -1,5 +1,5 @@
   angular.module("RESTservices", [])
-   .service('storeownersREST', function($http) {
+   .service('storeownersREST',['$http', '$window', function($http, $window) {
     var storeownersREST = this;
     storeownersREST.post = function(newUserData) {
      return $http({
@@ -20,5 +20,13 @@ storeownersREST.login = function(data) {
       
      });
     };
-
-   });
+storeownersREST.logout = function(){
+ return $http({
+  url:"https://finalproject-bdowlatshahiessf.c9users.io/api/storeowners/logout",
+  method:'POST',
+  header: {
+   'Authorization':$window.localStorage.token
+  }
+ });
+};
+   }]);
