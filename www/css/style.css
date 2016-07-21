@@ -1,1 +1,38 @@
-/* Empty. Add your own CSS if you like */
+h1, h2, h3, h5, h6 {
+   color: AliceBlue; 
+}
+.pane, .shipclass {
+      background: linear-gradient(to right, purple, violet, AliceBlue);
+      border:none;
+    
+      
+}
+.bar.bar-royal, .bar.bar-royal .title  {
+    background-color: purple;
+    color: AliceBlue;
+    border:none;
+    
+   
+  
+}
+   label[class="item item-input"] {
+       background: AliceBlue;
+    border: 1px solid purple;
+    border-radius: 2px;
+    border-radius: 75px;
+} 
+.button {
+    background: AliceBlue !important;
+  border-radius: 0px 75px 0px 75px;
+  transform: scale(.9);
+  padding: 10px 2px;
+  font-size: 30px;
+  border: none;
+  opacity: 0.75;
+  
+
+}
+img {
+    border-radius: 70%;
+    opacity: 0.75;
+}
